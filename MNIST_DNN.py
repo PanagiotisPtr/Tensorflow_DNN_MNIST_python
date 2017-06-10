@@ -51,7 +51,7 @@ keep_prob = tf.placeholder(tf.float32) # Probability of keeping a unit during dr
 l1 = tf.nn.relu(tf.matmul(X, W) + b)
 l1 = tf.nn.dropout(l1, keep_prob)   # Add dropout to 1st layer  ---> Helps with reguralization
 l2 = tf.nn.relu(tf.matmul(l1, M) + c)
-l1 = tf.nn.dropout(l2, keep_prob)   # Add dropout to 2nd layer  ---> Helps with reguralization
+l2 = tf.nn.dropout(l2, keep_prob)   # Add dropout to 2nd layer  ---> Helps with reguralization
 l3 = tf.matmul(l2, Q) + d
 y_ = tf.nn.softmax(l3)
 
